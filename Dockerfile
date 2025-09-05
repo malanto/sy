@@ -48,7 +48,7 @@ RUN \
 # COPY . ./
 
 ADD launch.sh launch.sh
-ADD config.yaml config.yaml
+ADD config.yaml ./config/config.yaml
 RUN curl -JLO  https://github.com/bincooo/SillyTavern-Docker/releases/download/v1.0.0/git-batch
 RUN chmod +x launch.sh && chmod +x git-batch && ./git-batch -h
 
@@ -63,15 +63,6 @@ RUN \
   mkdir "config" || true
 
 # Cleanup unnecessary files
-RUN \
-  echo "*** Cleanup ***" && \
-  mv "./docker/docker-entrypoint.sh" "./" && \
-  rm -rf "./docker" && \
-  echo "*** Make docker-entrypoint.sh executable ***" && \
-  chmod +x "./docker-entrypoint.sh" && \
-  echo "*** Convert line endings to Unix format ***" && \
-  dos2unix "./docker-entrypoint.sh"
-RUN sed -i 's/# Start the server/.\/launch.sh env \&\& .\/launch.sh init/g' docker-entrypoint.sh
 RUN chmod -R 777 ${APP_HOME}
 
 EXPOSE 8080
