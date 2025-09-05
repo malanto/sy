@@ -73,6 +73,6 @@ RUN \
 RUN sed -i 's/# Start the server/.\/launch.sh env \&\& .\/launch.sh init/g' docker-entrypoint.sh
 RUN chmod -R 777 ${APP_HOME}
 
-EXPOSE 7860
+EXPOSE 8080
 
 CMD [ "./docker-entrypoint.sh" ]
