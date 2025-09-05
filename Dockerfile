@@ -59,6 +59,7 @@ RUN \
 
 # Copy default chats, characters and user avatars to <folder>.default folder
 RUN \
+  rm -rf docker && \
   rm -rf data && \
   ln -s history data && \
   mkdir "config" || true
