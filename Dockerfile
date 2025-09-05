@@ -76,5 +76,3 @@ RUN chmod -R 777 ${APP_HOME}
 EXPOSE 7860
 
 CMD [ "./docker-entrypoint.sh" ]
-
-USER 10014

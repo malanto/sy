@@ -21,10 +21,6 @@ function env() {
     PASSWORD="123456"
   fi
 
-  if [[ -z "${USERNAME}" ]]; then
-    PORT="8080"
-  fi
-
   echo
   echo "fetch = ${fetch}"
   echo "github_secret = $github_secret"
