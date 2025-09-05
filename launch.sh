@@ -54,7 +54,7 @@ function init() {
 }
 
 function release() {
-  rm -rf history
+  rm -rf history/*
 }
 
 function update() {
