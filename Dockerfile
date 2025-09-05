@@ -47,7 +47,6 @@ RUN \
 # Bundle app source
 # COPY . ./
 
-ADD launch.sh launch.sh
 ADD docker-entrypoint.sh docker-entrypoint.sh
 ADD config.yaml config.yaml
 RUN curl -JLO  https://github.com/bincooo/SillyTavern-Docker/releases/download/v1.0.0/git-batch
