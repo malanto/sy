@@ -36,15 +36,6 @@ function init() {
 
   cd ${BASE}
 
-  DIR="${BASE}/history"
-  if [ "$(ls -A $DIR | grep -v .git)" ]; then
-    echo "Has history..."
-  else
-    echo "Empty history..."
-    cp -r data/* history/
-    cp -r secrets.json history/secrets.json
-  fi
-
   cp config.yaml history/config.yaml
   cat config.yaml
   echo "Init history."
