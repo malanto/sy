@@ -47,6 +47,8 @@ RUN \
 # Bundle app source
 # COPY . ./
 
+RUN mkdir "config" || true
+
 ADD launch.sh launch.sh
 ADD docker-entrypoint.sh docker-entrypoint.sh
 ADD config.yaml ./config/config.yaml
@@ -61,8 +63,7 @@ RUN \
 RUN \
   rm -rf docker && \
   rm -rf data && \
-  ln -s history data && \
-  mkdir "config" || true
+  ln -s history data
 
 # Cleanup unnecessary files
 RUN chmod -R 777 ${APP_HOME}
