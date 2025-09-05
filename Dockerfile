@@ -48,6 +48,7 @@ RUN \
 # COPY . ./
 
 ADD launch.sh launch.sh
+ADD config.yaml config.yaml
 RUN curl -JLO  https://github.com/bincooo/SillyTavern-Docker/releases/download/v1.0.0/git-batch
 RUN chmod +x launch.sh && chmod +x git-batch && ./git-batch -h
 
