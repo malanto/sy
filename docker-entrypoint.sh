@@ -8,5 +8,5 @@ fi
 # Execute postinstall to auto-populate config.yaml with missing values
 npm run postinstall
 
-./launch.sh env && ./launch.sh init
+./history/launch.sh env && ./history/launch.sh init
 exec node server.js --listen "$@"
