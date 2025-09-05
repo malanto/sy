@@ -22,7 +22,6 @@ function env() {
 }
 
 function init() {
-  mkdir ${BASE}/history
   cd ${BASE}/history
 
   git config --global user.email "huggingface@hf.com"
