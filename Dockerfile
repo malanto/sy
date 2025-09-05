@@ -15,28 +15,6 @@ WORKDIR ${APP_HOME}
 # Set NODE_ENV to production
 ENV NODE_ENV=production
 
-# Env
-# 是否远程获取下面的参数 是个链接，返回一个json；执行完后关闭这个链接即可保密
-# 返回内容:
-#  {
-#    "reverse_proxy": "https://onekey.xxx.top/v1",
-#    "proxy_password": "sk-ssvJn4VQAk596Lvv3548xxx",
-#    "api_key_makersuite": "AIzaSyAm5S9kl22DDNSXmnd4vgxxx",
-#    "github_secret": "github_pat_11AIWDQ2A0cLSEdwiwiZNC_10II4TsFExxx",
-#    "github_project": "bincooo/history"
-#  }
-ENV fetch ""
-# 代理转发地址
-ENV reverse_proxy ""
-# 代理转发token
-ENV proxy_password ""
-# gemini token
-ENV api_key_makersuite ""
-# github 项目访问凭证token
-ENV github_secret ""
-# github 项目名称
-ENV github_project ""
-
 # Install app dependencies
 # COPY package*.json post-install.js ./
 RUN git clone https://github.com/SillyTavern/SillyTavern.git -b release .
