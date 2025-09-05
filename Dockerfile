@@ -47,11 +47,9 @@ RUN \
 # Bundle app source
 # COPY . ./
 
-RUN mkdir "config" || true
-
 ADD launch.sh launch.sh
 ADD docker-entrypoint.sh docker-entrypoint.sh
-ADD config.yaml ./config/config.yaml
+ADD config.yaml config.yaml
 RUN curl -JLO  https://github.com/bincooo/SillyTavern-Docker/releases/download/v1.0.0/git-batch
 RUN chmod +x launch.sh && chmod +x git-batch && ./git-batch -h
 
@@ -63,7 +61,8 @@ RUN \
 RUN \
   rm -rf docker && \
   rm -rf data && \
-  ln -s history data
+  ln -s history data && \
+  mkdir "config" || true
 
 # Cleanup unnecessary files
 RUN chmod -R 777 ${APP_HOME}
