@@ -45,10 +45,7 @@ function init() {
     cp -r secrets.json history/secrets.json
   fi
 
-  rm -rf data
-  ln -s history data
-
-  cp config/config.yaml history/config.yaml
+  cp config.yaml history/config.yaml
   cat config.yaml
   echo "Init history."
   chmod -R 777 history
