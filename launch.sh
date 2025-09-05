@@ -63,14 +63,7 @@ function init() {
   rm -rf data
   ln -s history data
 
-  rm -r config.yaml
   cp config/config.yaml history/config.yaml
-  ln -s history/config.yaml config.yaml
-  sed -i "s/username: .*/username: \"${USERNAME}\"/" ${BASE}/config.yaml
-  sed -i "s/password: .*/password: \"${PASSWORD}\"/" ${BASE}/config.yaml
-  sed -i "s/port: .*/port: \"${PORT}\"/" ${BASE}/config.yaml
-  sed -i "s/whitelistMode: true/whitelistMode: false/" ${BASE}/config.yaml
-  sed -i "s/basicAuthMode: false/basicAuthMode: true/" ${BASE}/config.yaml
   cat config.yaml
   echo "Init history."
   chmod -R 777 history
