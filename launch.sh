@@ -1,9 +1,6 @@
 #!/bin/sh
 
 BASE=/home/node/app
-USERNAME=$(printenv username)
-PASSWORD=$(printenv password)
-PORT=$(printenv port)
 
 function env() {
   if [[ ! -z "${fetch}" ]]; then
@@ -13,21 +10,10 @@ function env() {
     export github_project=$(jq -r .github_project data.json)
   fi
 
-  if [[ -z "${USERNAME}" ]]; then
-    USERNAME="root"
-  fi
-
-  if [[ -z "${PASSWORD}" ]]; then
-    PASSWORD="123456"
-  fi
-
   echo
   echo "fetch = ${fetch}"
   echo "github_secret = $github_secret"
   echo "github_project = $github_project"
-  echo "USERNAME = ${USERNAME}"
-  echo "PASSWORD = ${PASSWORD}"
-  echo "PORT = ${PORT}"
   echo
   echo
 
